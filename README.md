@@ -15,3 +15,7 @@ Sample code from blog posts on learnmoderncpp.com
 * new-namespace https://learnmoderncpp.com/2020/09/02/creating-namespaces-from-namespaces/
 
 * one-liner https://learnmoderncpp.com/2020/09/07/a-handy-c-one-liner/
+
+* any-vs-variant https://learnmoderncpp.com/2020/11/14/stdany-vs-stdvariant-1/
+
+* physical-property https://learnmoderncpp.com/2022/02/15/dimensional-analysis-and-calculations-in-c-1/
