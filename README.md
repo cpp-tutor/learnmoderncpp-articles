@@ -11,3 +11,5 @@ Sample code from blog posts on learnmoderncpp.com
 * cpp-assert https://learnmoderncpp.com/2020/02/10/writing-assert-in-cpp/
 
 * case-string https://learnmoderncpp.com/2020/06/01/strings-as-switch-case-labels/
+
+* new-namespace https://learnmoderncpp.com/2020/09/02/creating-namespaces-from-namespaces/
