@@ -1,3 +1,6 @@
+// printf_to_string.hpp : convert printf() parameters into a std::string
+// requires -std=c++17 or later
+
 #ifndef printf_to_string_hpp
 #define printf_to_string_hpp
 
