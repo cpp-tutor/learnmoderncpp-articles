@@ -9,3 +9,5 @@ Sample code from blog posts on learnmoderncpp.com
 * pyrange https://learnmoderncpp.com/2019/11/18/pythons-range-in-20-lines-of-c/
 
 * cpp-assert https://learnmoderncpp.com/2020/02/10/writing-assert-in-cpp/
+
+* case-string https://learnmoderncpp.com/2020/06/01/strings-as-switch-case-labels/
