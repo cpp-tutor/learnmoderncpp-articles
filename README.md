@@ -13,3 +13,5 @@ Sample code from blog posts on learnmoderncpp.com
 * case-string https://learnmoderncpp.com/2020/06/01/strings-as-switch-case-labels/
 
 * new-namespace https://learnmoderncpp.com/2020/09/02/creating-namespaces-from-namespaces/
+
+* one-liner https://learnmoderncpp.com/2020/09/07/a-handy-c-one-liner/
