@@ -18,4 +18,6 @@ Sample code from blog posts on learnmoderncpp.com
 
 * any-vs-variant https://learnmoderncpp.com/2020/11/14/stdany-vs-stdvariant-1/
 
+* primes-class https://learnmoderncpp.com/2020/12/24/a-prime-number-calculator-using-a-template-class/
+
 * physical-property https://learnmoderncpp.com/2022/02/15/dimensional-analysis-and-calculations-in-c-1/
