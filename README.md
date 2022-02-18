@@ -20,4 +20,6 @@ Sample code from blog posts on learnmoderncpp.com
 
 * primes-class https://learnmoderncpp.com/2020/12/24/a-prime-number-calculator-using-a-template-class/
 
+* expression-eval https://learnmoderncpp.com/2021/02/09/evaluating-expressions-using-reverse-polish-1/
+
 * physical-property https://learnmoderncpp.com/2022/02/15/dimensional-analysis-and-calculations-in-c-1/
