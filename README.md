@@ -16,7 +16,7 @@ Sample code from blog posts on learnmoderncpp.com
 
 * one-liner https://learnmoderncpp.com/2020/09/07/a-handy-c-one-liner/
 
-* any-vs-variant https://learnmoderncpp.com/2020/11/14/stdany-vs-stdvariant-1/
+* any-vs-variant https://learnmoderncpp.com/2020/11/05/stdany-vs-stdvariant-1/
 
 * primes-class https://learnmoderncpp.com/2020/12/24/a-prime-number-calculator-using-a-template-class/
 
