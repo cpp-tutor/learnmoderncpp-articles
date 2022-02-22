@@ -48,13 +48,13 @@ auto operator-(const PhysicalProperty<M,K,S,T>& lhs, const PhysicalProperty<M,K,
 
 template<int M, int K, int S, typename T, int M1, int K1, int S1, typename T1>
 auto operator*(const PhysicalProperty<M,K,S,T>& lhs, const PhysicalProperty<M1,K1,S1,T1>& rhs) {
-    auto res = PhysicalProperty<M+M1, K+K1, S+S1, decltype(T{} * T1{})>(lhs.get_scalar() * rhs.get_scalar());
+    PhysicalProperty<M+M1, K+K1, S+S1, decltype(T{} * T1{})> res{ lhs.get_scalar() * rhs.get_scalar() };
     return res;
 }
 
 template<int M, int K, int S, typename T, int M1, int K1, int S1, typename T1>
 auto operator/(const PhysicalProperty<M,K,S,T>& lhs, const PhysicalProperty<M1,K1,S1,T1>& rhs) {
-    auto res = PhysicalProperty<M-M1, K-K1, S-S1, decltype(T{} / T1{})>(lhs.get_scalar() / rhs.get_scalar());
+    PhysicalProperty<M-M1, K-K1, S-S1, decltype(T{} / T1{})> res{ lhs.get_scalar() / rhs.get_scalar() };
     return res;
 }
 
@@ -67,14 +67,14 @@ auto operator*(const T& lhs, const PhysicalProperty<M,K,S,T>& rhs) {
 
 template<int M, int K, int S, typename T>
 auto operator/(const T& lhs, const PhysicalProperty<M,K,S,T>& rhs) {
-    auto res = PhysicalProperty<-M,-K,-S>(lhs / rhs.get_scalar());
+    PhysicalProperty<-M,-K,-S> res{ lhs / rhs.get_scalar() };
     return res;
 }
 
 template<int M, int K, int S, typename T>
 auto sqrt(const PhysicalProperty<M,K,S,T>& pp) {
     static_assert((M % 2 == 0) && (K % 2 == 0) && (S % 2 == 0));
-    auto res = PhysicalProperty<M/2, K/2, S/2, T>(sqrt(pp.get_scalar()));
+    PhysicalProperty<M/2, K/2, S/2, T> res{ sqrt(pp.get_scalar()) };
     return res;
 }
 
