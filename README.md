@@ -22,4 +22,14 @@ Sample code from blog posts on learnmoderncpp.com
 
 * expression-eval https://learnmoderncpp.com/2021/02/09/evaluating-expressions-using-reverse-polish-1/
 
-* physical-property https://learnmoderncpp.com/2022/02/15/dimensional-analysis-and-calculations-in-c-1/
+* reference-classes https://learnmoderncpp.com/2021/02/26/reference-semantics-for-c-classes/
+
+* lock-streams https://learnmoderncpp.com/2021/04/30/locking-c-streams-for-multi-threaded-code/
+
+* template-primer https://learnmoderncpp.com/2021/06/17/templates-in-c-primer-1/
+
+* fold-expressions https://learnmoderncpp.com/2021/08/10/c-folding-expressions/
+
+* cpp-ranges https://learnmoderncpp.com/2022/01/20/what-future-for-c/
+
+* physical-property https://learnmoderncpp.com/2022/02/09/dimensional-analysis-and-calculations-in-c-1/
