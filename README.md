@@ -30,6 +30,6 @@ Sample code from blog posts on learnmoderncpp.com
 
 * fold-expressions https://learnmoderncpp.com/2021/08/10/c-folding-expressions/
 
-* cpp-ranges https://learnmoderncpp.com/2022/01/20/what-future-for-c/
+* cpp-ranges https://learnmoderncpp.com/2022/01/20/what-future-for-c/ https://learnmoderncpp.com/2022/03/05/modern-c-ranges-ts-20-v3-stl-2-0-or-hype/
 
 * physical-property https://learnmoderncpp.com/2022/02/09/dimensional-analysis-and-calculations-in-c-1/
