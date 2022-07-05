@@ -36,4 +36,4 @@ Sample code from blog posts on learnmoderncpp.com
 
 * cpp-lambdas https://learnmoderncpp.com/2022/04/08/c-lambdas-primer-1/
 
-* coroutine https://learnmoderncpp.com/2022/06/30/c-coroutines/
+* coroutine https://learnmoderncpp.com/2022/06/30/c-coroutines-primer-1/
