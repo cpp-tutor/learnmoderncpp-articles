@@ -1,29 +1,42 @@
+// triples.cpp : calculate all non-multiple Pythagorean Triples up to set hypotenuse length (default 2500)
+// to compile use: /std:c++latest (Visual Studio 2022)
+//                 -std=c++20 (g++)
+//                 -std=c++20 -stdlib=libc++ (clang++)
+
 #include <iostream>
 #include <cstdlib>
 #include <vector>
 #include <tuple>
 #include <numeric>
 #include <chrono>
+#ifdef __clang__
+#include <experimental/coroutine>
+
+namespace std {
+    using namespace experimental;
+}
+#else
 #include <coroutine>
+#endif
 
 using namespace std::literals::chrono_literals;
 using SideT = unsigned;
 
 struct CoroCtx {
-  struct promise_type {
-    CoroCtx get_return_object() { return {}; }
-    std::suspend_never initial_suspend() { return {}; }
-    std::suspend_never final_suspend() noexcept { return {}; }
-    void unhandled_exception() {}
-    void return_void() noexcept {}
-  };
+    struct promise_type {
+        CoroCtx get_return_object() { return {}; }
+        std::suspend_never initial_suspend() { return {}; }
+        std::suspend_never final_suspend() noexcept { return {}; }
+        void unhandled_exception() {}
+        void return_void() noexcept {}
+    };
 };
 
-struct AwaitCtx{
-  std::coroutine_handle<> *hp;
-  constexpr bool await_ready() const noexcept { return false; }
-  void await_suspend(std::coroutine_handle<> h) { *hp = h; }
-  constexpr void await_resume() const noexcept {}
+struct AwaitCtx {
+    std::coroutine_handle<> *hp;
+    constexpr bool await_ready() const noexcept { return false; }
+    void await_suspend(std::coroutine_handle<> h) { *hp = h; }
+    constexpr void await_resume() const noexcept {}
 };
 
 CoroCtx progress(std::coroutine_handle<> *continuation_out, auto n, auto delay) {
