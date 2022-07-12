@@ -9,11 +9,11 @@
 #include <tuple>
 #include <numeric>
 #include <chrono>
-#ifdef __clang__
+#if defined(__clang__) && (__clang_major__ < 14) // workaround
 #include <experimental/coroutine>
 
 namespace std {
-    using namespace experimental;
+  using namespace experimental;
 }
 #else
 #include <coroutine>

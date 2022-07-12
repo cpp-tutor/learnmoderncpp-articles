@@ -1,6 +1,6 @@
 // Generator.hpp : https://en.cppreference.com/w/cpp/language/coroutines
 
-#ifdef __clang__ // workaround for clang 13.0
+#if defined(__clang__) && (__clang_major__ < 14) // workaround
 #include <experimental/coroutine>
 
 namespace std {
