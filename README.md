@@ -39,3 +39,5 @@ Sample code from blog posts on learnmoderncpp.com
 * coroutine https://learnmoderncpp.com/2022/06/30/c-coroutines-primer-1/
 
 * source-location https://learnmoderncpp.com/2022/08/24/modern-c-flow-diagnostic-tools/
+
+* iterator https://learnmoderncpp.com/2022/09/30/c-iterators-primer/
