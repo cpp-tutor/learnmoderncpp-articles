@@ -32,8 +32,6 @@ Sample code from blog posts on learnmoderncpp.com
 
 * cpp-ranges https://learnmoderncpp.com/2022/01/20/what-future-for-c/ https://learnmoderncpp.com/2022/03/05/modern-c-ranges-ts-20-v3-stl-2-0-or-hype/
 
-* physical-property https://learnmoderncpp.com/2022/02/09/dimensional-analysis-and-calculations-in-c-1/
-
 * cpp-lambdas https://learnmoderncpp.com/2022/04/08/c-lambdas-primer-1/
 
 * coroutine https://learnmoderncpp.com/2022/06/30/c-coroutines-primer-1/
