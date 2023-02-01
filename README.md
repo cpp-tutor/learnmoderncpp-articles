@@ -43,3 +43,7 @@ Sample code from blog posts on learnmoderncpp.com
 * iterator https://learnmoderncpp.com/2022/09/30/c-iterators-primer/
 
 * consteval https://learnmoderncpp.com/2022/10/18/know-constexpr-heres-consteval-constinit/
+
+* modern-visitor https://learnmoderncpp.com/2022/11/01/visitor-pattern-in-modern-c/
+
+* deducing-this https://learnmoderncpp.com/2022/12/07/applications-of-c23s-deducing-this/
