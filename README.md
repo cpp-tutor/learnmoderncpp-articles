@@ -46,4 +46,6 @@ Sample code from blog posts at https://learnmoderncpp.com
 
 * deducing-this [Applications of C++23’s deducing 'this'](https://learnmoderncpp.com/2022/12/07/applications-of-c23s-deducing-this/)
 
-* class-design [A Modern C++ class designer's toolkit](http://learnmoderncpp.com/2023/01/16/a-modern-c-class-designers-toolkit/)
+* class-design [A Modern C++ class designer's toolkit](https://learnmoderncpp.com/2023/01/16/a-modern-c-class-designers-toolkit/)
+
+* generic-class [Generic classes in Modern C++](https://learnmoderncpp.com/2023/04/22/generic-classes-in-modern-c/)
