@@ -51,3 +51,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * class-design [A Modern C++ class designer's toolkit](https://learnmoderncpp.com/2023/01/16/a-modern-c-class-designers-toolkit/)
 
 * generic-class [Generic classes in Modern C++](https://learnmoderncpp.com/2023/04/22/generic-classes-in-modern-c/)
+
+* serialization [Designing Classes for Serialization](http://learnmoderncpp.com/2023/06/18/designing-classes-for-serialization/)

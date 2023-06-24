@@ -1,0 +1,17 @@
+<People>
+  <Person id="41">
+    <Name>Alice</Name>
+    <Age>25</Age>
+    <Location>New York</Location>
+  </Person>
+  <Person id="42">
+    <Name>Bob</Name>
+    <Age>30</Age>
+    <Location>Los Angeles</Location>
+  </Person>
+  <Person id="43">
+    <Name>Charlie</Name>
+    <Age>35</Age>
+    <Location>Detroit</Location>
+  </Person>
+</People>
