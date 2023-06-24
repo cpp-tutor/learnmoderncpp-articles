@@ -30,6 +30,8 @@ Sample code from blog posts at https://learnmoderncpp.com
 
 * fold-expressions [C++ folding expressions](https://learnmoderncpp.com/2021/08/10/c-folding-expressions/)
 
+* kotlin-cpp [Calling C++ code from Kotlin](http://learnmoderncpp.com/2021/10/13/calling-c-code-from-kotlin/)
+
 * cpp-ranges [What future for C++?](https://learnmoderncpp.com/2022/01/20/what-future-for-c/) and also [Modern C++ Ranges (TS/20/v3), STL 2.0 or hype?](https://learnmoderncpp.com/2022/03/05/modern-c-ranges-ts-20-v3-stl-2-0-or-hype/)
 
 * cpp-lambdas [C++ Lambdas Primer](https://learnmoderncpp.com/2022/04/08/c-lambdas-primer-1/)
@@ -44,7 +46,7 @@ Sample code from blog posts at https://learnmoderncpp.com
 
 * modern-visitor [Visitor Pattern in Modern C++](https://learnmoderncpp.com/2022/11/01/visitor-pattern-in-modern-c/)
 
-* deducing-this [Applications of C++23’s deducing 'this'](https://learnmoderncpp.com/2022/12/07/applications-of-c23s-deducing-this/)
+* deducing-this [Applications of C++23's deducing 'this'](https://learnmoderncpp.com/2022/12/07/applications-of-c23s-deducing-this/)
 
 * class-design [A Modern C++ class designer's toolkit](https://learnmoderncpp.com/2023/01/16/a-modern-c-class-designers-toolkit/)
 
