@@ -26,7 +26,7 @@ class XMLElement {
     const std::string_view indent_with = "  ";
     static std::string read_until(std::istream &is, char c, bool eat, bool skipws) {
         std::string str;
-        int ch = is.get();
+        auto ch = is.get();
         while (!is.eof() && (static_cast<char>(ch) != c)) {
             if (!skipws || ch > ' ') {
                 str += static_cast<char>(ch);
@@ -55,9 +55,9 @@ public:
         str = read_until(is, '<', false, true);
         if (str.empty()) {
             str = read_until(is, '>', true, false);
-            const std::regex begin_elem{ R"(<([A-Za-z_][A-Za-z0-9_]*)( +.*)?>)" },
+            const std::regex begin_elem{ R"(<([A-Za-z_][A-Za-z0-9_]*)((\n|\r|.)*)>)" },
                 end_elem{ R"((/>)|(</([A-Za-z_][A-Za-z0-9_]*)>))" },
-                attr{ R"*(^ +([A-Za-z_][A-Za-z0-9_]*)="([^"]*)")*" }, end_attrs{ R"( */?)" };
+                attr{ R"*(^\s+([A-Za-z_][A-Za-z0-9_]*)="([^"]*)")*" }, end_attrs{ R"(\s*/?$)" };
             std::smatch matches;
             if (std::regex_match(str, matches, begin_elem)) {
                 name = matches[1].str();
@@ -89,6 +89,9 @@ public:
                     for (;;) {
                         children.push_back(std::make_unique<XMLElement>(is));
                         str = read_until(is, '<', true, true);
+                        if (str != "<") {
+                            break;
+                        }
                         char c;
                         is >> c;
                         if (c == '/') {
