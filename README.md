@@ -6,7 +6,7 @@ Sample code from blog posts at https://learnmoderncpp.com
 
 * printf-to-string [printf() to a std::string](https://learnmoderncpp.com/2019/11/04/printf-to-a-stdstring/)
 
-* pyrange [Python’s range() in 20 lines of C++](https://learnmoderncpp.com/2019/11/18/pythons-range-in-20-lines-of-c/)
+* pyrange [Python's range() in 20 lines of C++](https://learnmoderncpp.com/2019/11/18/pythons-range-in-20-lines-of-c/)
 
 * cpp-assert [Writing assert() in C++](https://learnmoderncpp.com/2020/02/10/writing-assert-in-cpp/)
 
