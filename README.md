@@ -53,3 +53,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * generic-class [Generic classes in Modern C++](https://learnmoderncpp.com/2023/04/22/generic-classes-in-modern-c/)
 
 * serialization [Designing Classes for Serialization](http://learnmoderncpp.com/2023/06/18/designing-classes-for-serialization/)
+
+* functional [Applying Functional Programming Techniques to Modern C++](https://learnmoderncpp.com/2023/08/03/applying-functional-programming-techniques-to-modern-c/)
