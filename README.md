@@ -55,3 +55,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * serialization [Designing Classes for Serialization](http://learnmoderncpp.com/2023/06/18/designing-classes-for-serialization/)
 
 * functional [Applying Functional Programming Techniques to Modern C++](https://learnmoderncpp.com/2023/08/03/applying-functional-programming-techniques-to-modern-c/)
+
+* traitspolicy [Designing Traits and Policy Classes](https://learnmoderncpp.com/2023/08/20/designing-traits-and-policy-classes/)
