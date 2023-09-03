@@ -1,6 +1,6 @@
 #include <iostream>
 #include <concepts>
-#include <exception>
+#include <stdexcept>
 
 auto remainder(std::integral auto a, std::integral auto b) {
     return a % b;
