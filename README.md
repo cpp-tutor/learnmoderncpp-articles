@@ -59,3 +59,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * traitspolicy [Designing Traits and Policy Classes](https://learnmoderncpp.com/2023/08/20/designing-traits-and-policy-classes/)
 
 * concepts [Concepts 101](https://learnmoderncpp.com/2023/09/03/concepts-101/)
+
+* function-selection [Selecting Functions at Compile Time](https://learnmoderncpp.com/2023/09/26/selecting-functions-at-compile-time/)
