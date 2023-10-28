@@ -61,3 +61,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * concepts [Concepts 101](https://learnmoderncpp.com/2023/09/03/concepts-101/)
 
 * function-selection [Selecting Functions at Compile Time](https://learnmoderncpp.com/2023/09/26/selecting-functions-at-compile-time/)
+
+* expected [Signaling error conditions without exceptions](https://learnmoderncpp.com/2023/10/28/signaling-error-conditions-without-exceptions/)
