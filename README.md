@@ -63,3 +63,6 @@ Sample code from blog posts at https://learnmoderncpp.com
 * function-selection [Selecting Functions at Compile Time](https://learnmoderncpp.com/2023/09/26/selecting-functions-at-compile-time/)
 
 * expected [Signaling error conditions without exceptions](https://learnmoderncpp.com/2023/10/28/signaling-error-conditions-without-exceptions/)
+
+* function-runtime [Selecting Functions at Runtime](https://learnmoderncpp.com/2023/11/22/selecting-functions-at-runtime/)
+
