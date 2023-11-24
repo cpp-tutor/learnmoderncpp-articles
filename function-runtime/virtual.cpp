@@ -7,6 +7,7 @@ protected:
 public:
     DivideToInt(double divisor, double dividend) : divisor{ divisor }, dividend{ dividend } {}
     virtual int div() const = 0;
+    virtual ~DivideToInt() {}
 };
 
 class CeilingDivide : public DivideToInt {
@@ -41,4 +42,8 @@ int main() {
     std::cout << "ceil(7.0 / 3.3) = " << divisions[0]->div() << '\n';
     std::cout << "floor(7.0 / 3.3) = " << divisions[1]->div() << '\n';
     std::cout << "round(7.0 / 3.3) = " << divisions[2]->div() << '\n';
+    for (auto& d : divisions) {
+        delete d;
+        d = nullptr;
+    }
 }

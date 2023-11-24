@@ -5,21 +5,6 @@
 
 enum class DivisionPolicy { Ceiling, Floor, Nearest };
 
-std::ostream& operator<<(std::ostream& os, const DivisionPolicy policy) {
-    switch (policy) {
-        case DivisionPolicy::Ceiling:
-            os << "Ceiling";
-            break;
-        case DivisionPolicy::Floor:
-            os << "Floor";
-            break;
-        case DivisionPolicy::Nearest:
-            os << "Nearest";
-            break;
-    }
-    return os;
-}    
-
 int main() {
     std::function<int(double,double)> df;
     for (auto p : { DivisionPolicy::Ceiling, DivisionPolicy::Floor, DivisionPolicy::Nearest }) {
@@ -34,6 +19,6 @@ int main() {
                 df = [](double a, double b) -> int { return round(a / b); };
                 break;
         }
-        std::cout << p << ": " << df(7.0, 3.3) << '\n';
+        std::cout << static_cast<int>(p) << ": " << df(7.0, 3.3) << '\n';
     }
 }
