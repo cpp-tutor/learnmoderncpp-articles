@@ -67,3 +67,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * function-runtime [Selecting Functions at Runtime](https://learnmoderncpp.com/2023/11/22/selecting-functions-at-runtime/)
 
 * flat_map [Exploring C++23's flat_map](https://learnmoderncpp.com/2024/01/30/exploring-c23s-flat_map/)
+
+* lambdas-delayed [Using Lambda Functions for Delayed Evaluation](https://learnmoderncpp.com/2024/02/24/using-lambda-functions-for-delayed-evaluation/)
