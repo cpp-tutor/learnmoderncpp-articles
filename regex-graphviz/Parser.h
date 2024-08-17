@@ -13,12 +13,14 @@ class Parser: public ParserBase
         
     public:
         Parser() = delete;
-        Parser(Scanner& scanner, std::vector<Node>& nodes) : scanner{ scanner }, nodes{ nodes } {}
+        Parser(Scanner& scanner, std::list<Node>& nodes) : scanner{ scanner }, nodes{ nodes } {}
         int parse();
 
     private:
         Scanner& scanner;
-        std::vector<Node>& nodes;
+        std::list<Node>& nodes;
+        std::list<Node>::iterator nextNode;
+        int nodeId{};
         void error();                   // called on (syntax) errors
         int lex();                      // returns the next token from the
                                         // lexical scanner. 

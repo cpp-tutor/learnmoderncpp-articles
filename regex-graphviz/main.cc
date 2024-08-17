@@ -1,8 +1,6 @@
+#include "Node.h"
 #include "Scanner.h"
 #include "Parser.h"
-#include "Node.h"
-#include <vector>
-#include <string>
 #include <sstream>
 #include <iostream>
 
@@ -15,7 +13,7 @@ int main() {
             return 0;
         }
         std::istringstream input(str);
-        std::vector<Node> nodes;
+        std::list<Node> nodes;
         Scanner scanner(input);
         Parser parser(scanner, nodes);
         if (!parser.parse()) {
@@ -28,15 +26,15 @@ int main() {
             std::cout << '\n';
             for (const auto& node : nodes) {
                 for (const auto& edge : node.getEdges()) {
-                    std::cout << "  q" << node.getId() << " -> q" << edge << " [label=\"";
-                    if (nodes.at(edge).getName().size() == 1) {
-                        std::cout << nodes.at(edge).getName();
+                    std::cout << "  q" << node.getId() << " -> q" << edge->getId() << " [label=\"";
+                    if (edge->getName().size() == 1) {
+                        std::cout << edge->getName();
                     }
                     else {
                         std::cout << "ε";
                     }
                     std::cout << "\"";
-                    if (node.getId() == edge) {
+                    if (node.getId() == edge->getId()) {
                         std::cout << " dir=back";
                     }
                     std::cout << "];\n";

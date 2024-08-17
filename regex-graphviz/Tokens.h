@@ -7,13 +7,14 @@ struct Tokens
     enum Tokens_
     {
         CHAR = 257,
-        PLUS,
-        STAR,
-        QUESTION,
-        BAR,
         LPAREN,
         RPAREN,
         ERROR,
+        BAR,
+        CONCAT,
+        PLUS,
+        STAR,
+        QUESTION,
     };
 
 };

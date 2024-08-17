@@ -3,8 +3,9 @@
     // Include this file in the sources of the class Parser.
 
 // $insert class.h
+#include <list>
+#include "Node.h"
 #include "Parser.h"
-
 
 inline void Parser::error()
 {
