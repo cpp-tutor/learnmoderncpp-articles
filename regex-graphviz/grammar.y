@@ -5,7 +5,7 @@
 
 %left BAR
 %left CONCAT
-%right PLUS STAR QUESTION
+%left PLUS STAR QUESTION
 
 %%
 
