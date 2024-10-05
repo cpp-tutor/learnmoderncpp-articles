@@ -1,11 +1,7 @@
 %scanner-token-function scanner.lex()
 %stype std::pair<std::list<Node>::iterator,std::list<Node>::iterator>
 %token-path Tokens.h
-%token CHAR LPAREN RPAREN ERROR
-
-%left BAR
-%left CONCAT
-%left PLUS STAR QUESTION
+%token CHAR LPAREN RPAREN ERROR BAR PLUS STAR QUESTION
 
 %%
 
@@ -20,26 +16,10 @@ start       :           {
                         }
             ;
 
-regex       : regex STAR            {
-                                        $$ = $1;
-                                        $$.second->addEdgeTo($$.first);
-                                        (--$$.first)->addEdgeTo(nextNode);
-                                        ++$$.first;
-                                    }
-            | regex QUESTION        {
-                                        $$ = $1;
-                                        (--$$.first)->addEdgeTo(nextNode);
-                                        ++$$.first;
-                                    }
-            | regex PLUS            {
-                                        $$ = $1;
-                                        $$.second->addEdgeTo($$.first);
-                                    }
-            | regex regex
-                    %prec CONCAT    {   
-                                        $$ = { $1.first, $2.second };
-                                    }
-            | regex BAR regex       {
+regex       : disjunct
+            ;
+
+disjunct    : disjunct BAR concatenate  {
                                         $$ = { nodes.emplace($1.first, "", nodeId++), nextNode };
                                         for (auto& node : nodes) {
                                             for (auto edge : node.getEdges()) {
@@ -58,6 +38,30 @@ regex       : regex STAR            {
                                         nodes.emplace_back("?", nodeId++);
                                         nextNode = --nodes.end();
                                         $$.second->addEdgeTo(nextNode);
+                                    }
+            | concatenate
+            ;
+
+concatenate : concatenate unary     {
+                                        $$ = { $1.first, $2.second };
+                                    }
+            | unary
+            ;
+
+unary       : unary STAR            {
+                                        $$ = $1;
+                                        $$.second->addEdgeTo($$.first);
+                                        (--$$.first)->addEdgeTo(nextNode);
+                                        ++$$.first;
+                                    }
+            | unary QUESTION        {
+                                        $$ = $1;
+                                        (--$$.first)->addEdgeTo(nextNode);
+                                        ++$$.first;
+                                    }
+            | unary PLUS            {
+                                        $$ = $1;
+                                        $$.second->addEdgeTo($$.first);
                                     }
             | LPAREN regex RPAREN   {
                                         $$ = $2;
