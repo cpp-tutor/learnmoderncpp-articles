@@ -71,3 +71,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * lambdas-delayed [Using Lambda Functions for Delayed Evaluation](https://learnmoderncpp.com/2024/02/24/using-lambda-functions-for-delayed-evaluation/)
 
 * regex-graphviz [Uses of Parser Generators](https://learnmoderncpp.com/2024/08/14/uses-of-parser-generators/)
+
+* faster-algorithms [Making algorithms faster](https://learnmoderncpp.com/2024/10/12/making-algorithms-faster/)
