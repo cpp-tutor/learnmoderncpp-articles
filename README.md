@@ -73,3 +73,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * regex-graphviz [Uses of Parser Generators](https://learnmoderncpp.com/2024/08/14/uses-of-parser-generators/)
 
 * faster-algorithms [Making algorithms faster](https://learnmoderncpp.com/2024/10/12/making-algorithms-faster/)
+
+* concurrency [C++ Concurrency 101](https://learnmoderncpp.com/2024/11/09/c-concurrency-101/)
