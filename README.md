@@ -75,3 +75,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * faster-algorithms [Making algorithms faster](https://learnmoderncpp.com/2024/10/12/making-algorithms-faster/)
 
 * concurrency [C++ Concurrency 101](https://learnmoderncpp.com/2024/11/09/c-concurrency-101/)
+
+* operator-overloading [Operator Overloading in Modern C++](http://learnmoderncpp.com/2024/11/28/operator-overloading-in-modern-c-1/)
