@@ -8,6 +8,7 @@ int main() {
     getline(std::cin, str);
     while (!std::cin.eof() && !str.empty()) {
         buffer = str;
+        ++buffer;
         getline(std::cin, str);
     }
     while (!buffer.hasData()) {

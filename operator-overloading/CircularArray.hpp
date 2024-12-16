@@ -29,13 +29,11 @@ public:
     CircularArray& operator=(const T& rhs) {
         data[next] = rhs;
         inUse[next] = true;
-        doNext();
         return *this;
     }
     CircularArray& operator=(T&& rhs) {
         data[next] = std::move(rhs);
         inUse[next] = true;
-        doNext();
         return *this;
     }
     CircularArray& operator=(nullptr_t) {
