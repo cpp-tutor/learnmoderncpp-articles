@@ -60,23 +60,17 @@ public:
 
 template<typename T>
 inline Vec3d<T> operator+(const Vec3d<T>& lhs, const Vec3d<T>& rhs) {
-    auto result = lhs;
-    result += rhs;
-    return result;
+    return Vec3d<T>(lhs.x() + rhs.x(), lhs.y() + rhs.y(), lhs.z() + rhs.z());
 }
 
 template<typename T>
 inline Vec3d<T> operator-(const Vec3d<T>& lhs, const Vec3d<T>& rhs) {
-    auto result = lhs;
-    result -= rhs;
-    return result;
+    return Vec3d<T>(lhs.x() - rhs.x(), lhs.y() - rhs.y(), lhs.z() - rhs.z());
 }
 
 template<typename T>
 inline Vec3d<T> operator*(const Vec3d<T>& lhs, const T& rhs) {
-    auto result = lhs;
-    result *= rhs;
-    return result;
+    return Vec3d<T>(lhs.x() * rhs, lhs.y() * rhs, lhs.z() * rhs);
 }
 
 template<typename T>
@@ -86,9 +80,7 @@ inline Vec3d<T> operator*(const T& lhs, const Vec3d<T>& rhs) {
 
 template<typename T>
 inline Vec3d<T> operator/(const Vec3d<T>& lhs, const T& rhs) {
-    auto result = lhs;
-    result /= rhs;
-    return result;
+    return Vec3d<T>(lhs.x() / rhs, lhs.y() / rhs, lhs.z() / rhs);
 }
 
 template<typename T>
