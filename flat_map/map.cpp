@@ -39,15 +39,17 @@ string Person::toUpper(string_view s) {
 }
 
 int main() {
-    map<Person,int> Presidents{
-        { { "George HW", "Bush" }, 1988 },
-        { { "Bill", "Clinton" }, 1992 },
-        { { "George W", "Bush" }, 2000 },
-        { { "Barack", "Obama" }, 2008 },
-        { { "Donald", "Trump" }, 2016 },
-        { { "Joe", "Biden" }, 2020 }
+    map<Person,int> Scientists{
+        { { "Albert", "Einstein" }, 1879 },
+        { { "Marie", "Curie" }, 1867 },
+        { { "Isaac", "Newton" }, 1643 },
+        { { "Charles", "Darwin" }, 1809 },
+        { { "Galileo", "Galilei" }, 1564 },
+        { { "Nikola", "Tesla" }, 1856 },
+        { { "Stephen", "Hawking" }, 1942 },
+        { { "Alan", "Turing" }, 1912 }
     };
-    for (const auto& p : Presidents) {
-        cout << p.first << " elected in " << p.second << '\n';
+    for (const auto& s : Scientists) {
+        cout << s.first << " born in " << s.second << '\n';
     }
 }
