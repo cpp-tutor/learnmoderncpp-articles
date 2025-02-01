@@ -77,3 +77,5 @@ Sample code from blog posts at https://learnmoderncpp.com
 * concurrency [C++ Concurrency 101](https://learnmoderncpp.com/2024/11/09/c-concurrency-101/)
 
 * operator-overloading [Operator Overloading in Modern C++](http://learnmoderncpp.com/2024/11/28/operator-overloading-in-modern-c-1/)
+
+* move-semantics [Move Semantics in Modern C++](https://learnmoderncpp.com/2025/01/07/move-semantics-in-modern-c-1/)
