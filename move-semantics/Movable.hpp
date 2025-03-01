@@ -43,7 +43,10 @@ public:
         os << "Move-assign Movable with id " << id << " from id " << rhs.id << '\n';
         return *this;
     }
-    ~Movable() { delete[] str; }
+    ~Movable() {
+        os << "Delete Movable with id " << id << '\n';
+        delete[] str;
+    }
     void print(std::ostream& out = std::cout) {
         out << id << ": ";
         if (str) {
