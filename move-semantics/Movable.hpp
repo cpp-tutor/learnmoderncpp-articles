@@ -31,8 +31,9 @@ public:
         os << "Move-construct Movable with id " << id << " from id " << rhs.id << '\n';
     }
     Movable& operator=(const Movable& rhs) {
+        char *str1 = dup(rhs.str);
         delete[] str;
-        str = dup(rhs.str);
+        str = str1;
         os << "Copy-assign Movable with id " << id << " from id " << rhs.id << '\n';
         return *this;
     }
