@@ -1,17 +1,25 @@
 // cpp-range3.cpp : sum of the first million primes
-// note: compile with -std=c++17 or /std:c++20
+// note: compile with -std=c++23 or /std:c++latest
 
-#include <range/v3/view.hpp>
-#include <range/v3/numeric/accumulate.hpp>
-#include <iostream>
+#include <ranges>
+#include <numeric>
 #include <vector>
-
-using namespace ranges::v3;
-
+#include <iostream>
+ 
+using namespace std::ranges;
+ 
 int main() {
-    std::vector<unsigned long long> primes{};
-    auto is_prime = [&primes](auto n){
-        for (auto p : primes) {
+    auto is_prime = [](auto n){
+        if (n < 2) {
+            return false;
+        }
+        else if (n < 4) {
+            return true;
+        }
+        else if (n % 2 == 0) {
+            return false;
+        }
+        else for (int p = 3; p != n; p += 2) {
             if (n % p == 0) {
                 return false;
             }
@@ -19,12 +27,12 @@ int main() {
                 break;
             }
         }
-        primes.push_back(n);
         return true;
     };
-
+ 
     auto pipeline = views::iota(2)
         | views::filter(is_prime)
-        | views::take(1'000'000);
-    std::cout << "Sum of the first million primes is: " << accumulate(pipeline, unsigned long long{}) << '\n';
+        | views::take(1'000'000)
+        | to<std::vector>();
+    std::cout << "Sum of the first million primes is: " << std::accumulate(pipeline.begin(), pipeline.end(), 0ULL) << '\n';
 }
