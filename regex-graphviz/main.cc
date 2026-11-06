@@ -5,10 +5,17 @@
 #include <iostream>
 
 int main(const int argc, const char **argv) {
-    std::cout << "Please enter a regex, or blank line to end:\n";
-    for (;;) {
+    if (argc < 2) {
+        std::cout << "Please enter a regex, or blank line to end:\n";
+    }
+    for (int arg = 1; (argc == 1) || (arg < argc); ) {
         std::string str;
-        getline(std::cin, str);
+        if (argc == 1) {
+            getline(std::cin, str);
+        }
+        else {
+            str = argv[arg++];
+        }
         if (str.empty()) {
             return 0;
         }
