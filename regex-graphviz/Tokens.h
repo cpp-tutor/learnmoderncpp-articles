@@ -11,7 +11,6 @@ struct Tokens
         RPAREN,
         ERROR,
         BAR,
-        CONCAT,
         PLUS,
         STAR,
         QUESTION,

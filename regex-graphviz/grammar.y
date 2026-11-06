@@ -1,76 +1,44 @@
 %scanner-token-function scanner.lex()
-%stype std::pair<std::list<Node>::iterator,std::list<Node>::iterator>
+%stype std::shared_ptr<Node>
 %token-path Tokens.h
 %token CHAR LPAREN RPAREN ERROR BAR PLUS STAR QUESTION
 
 %%
 
-start       :           {
-                            nodes.emplace_front("Start", nodeId++);
-                            nodes.emplace_back("?", nodeId++);
-                            nextNode = --nodes.end();
-                            nodes.front().addEdgeTo(nextNode);
-                        }
-            regex EOF   {
-                            nextNode->setName("Accept");
+start       : regex EOF  {
+                            nodes = Node::makeStart(std::move($1), ++nodeId);
+                            $$ = nodes;
                         }
             ;
 
-regex       : disjunct
+regex       : disjunct              { $$ = std::move($1); }
             ;
 
 disjunct    : disjunct BAR concatenate  {
-                                        $$ = { nodes.emplace($1.first, "", nodeId++), nextNode };
-                                        for (auto& node : nodes) {
-                                            for (auto edge : node.getEdges()) {
-                                                if (edge == $1.first) {
-                                                    node.removeEdgeTo(edge);
-                                                    node.addEdgeTo($$.first);
-                                                }
-                                            }
-                                        }
-                                        $1.second->removeEdgeTo($3.first);
-                                        nextNode->setName("");
-                                        $$.first->addEdgeTo($1.first);
-                                        $1.second->addEdgeTo($$.second);
-                                        $$.first->addEdgeTo($3.first);
-                                        $3.second->addEdgeTo($$.second);
-                                        nodes.emplace_back("?", nodeId++);
-                                        nextNode = --nodes.end();
-                                        $$.second->addEdgeTo(nextNode);
+                                        $$ = Node::makeDisjunct(std::move($1), std::move($3));
                                     }
-            | concatenate
+            | concatenate           { $$ = std::move($1); }
             ;
 
 concatenate : concatenate unary     {
-                                        $$ = { $1.first, $2.second };
+                                        $$ = Node::makeConcat(std::move($1), std::move($2));
                                     }
-            | unary
+            | unary                 { $$ = std::move($1); }
             ;
 
 unary       : unary STAR            {
-                                        $$ = $1;
-                                        $$.second->addEdgeTo($$.first);
-                                        (--$$.first)->addEdgeTo(nextNode);
-                                        ++$$.first;
+                                        $$ = Node::makeStar(std::move($1));
                                     }
             | unary QUESTION        {
-                                        $$ = $1;
-                                        (--$$.first)->addEdgeTo(nextNode);
-                                        ++$$.first;
+                                        $$ = Node::makeQuestion(std::move($1));
                                     }
             | unary PLUS            {
-                                        $$ = $1;
-                                        $$.second->addEdgeTo($$.first);
+                                        $$ = Node::makePlus(std::move($1));
                                     }
             | LPAREN regex RPAREN   {
-                                        $$ = $2;
+                                        $$ = std::move($2);
                                     }
             | CHAR                  {
-                                        $$ = { nextNode, nextNode };
-                                        nextNode->setName(scanner.matched());
-                                        nodes.emplace_back("?", nodeId++);
-                                        nextNode = --nodes.end();
-                                        $$.first->addEdgeTo(nextNode);
+                                        $$ = Node::makeLetter(++nodeId, scanner.matched());
                                     }
             ;
