@@ -1,7 +1,7 @@
 # Makefile for regex to graphviz project
 
 CPP = g++
-CPPFLAGS = -Wall -std=c++20
+CPPFLAGS = -Wall -std=c++23
 FLEXCPP = flexc++
 BISONCPP = bisonc++
 OBJS = lex.o parse.o main.o
@@ -15,7 +15,7 @@ flexcpp: # lex.cc
 bisoncpp: # parse.cc
 	$(BISONCPP) grammar.y
 
-%.o: %.cpp
+%.o: %.cc
 	$(CPP) $(CPPFLAGS) -c -o $@ $<
 
 $(BASE): $(OBJS)
