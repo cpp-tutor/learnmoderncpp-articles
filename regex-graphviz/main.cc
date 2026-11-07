@@ -31,7 +31,6 @@ int main(const int argc, const char **argv) {
             tree->visit(
                 [](const Node& node){
                     if ((node.getType() == Node::NodeType::Letter)
-                        || (node.getType() == Node::NodeType::Empty)
                         || (node.getType() == Node::NodeType::Start)
                         || (node.getType() == Node::NodeType::Accept)) {
                             std::cout << "  q" << node.getId() << " [label=\"";

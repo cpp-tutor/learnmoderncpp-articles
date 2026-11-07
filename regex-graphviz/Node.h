@@ -4,18 +4,14 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <set>
 #include <algorithm>
 #include <functional>
 #include <utility>
 #include <stdexcept>
-#include <iostream>
 
 class Node;
 
-class Parser;
-
-class Node : public std::enable_shared_from_this<Node> {
+class Node {
 public:
     enum class NodeType : char {
         None = '?',
@@ -26,8 +22,7 @@ public:
         Star = '*',
         Question = '?',
         Plus = '+',
-        Letter = 'z',
-        Empty = ' '
+        Letter = 'z'
     };
     Node(NodeType type, int id = -1, const std::string& name = "")
         : type{ type }, id{ id },
@@ -35,7 +30,6 @@ public:
             {}
     void addEdgeTo(const std::shared_ptr<Node>& node) {
         if ((node->getType() != Node::NodeType::Letter)
-            && (node->getType() != Node::NodeType::Empty)
             && (node->getType() != Node::NodeType::Accept)) {
                 throw std::runtime_error("Cannot add edge to this node type.");
             }
@@ -45,17 +39,8 @@ public:
             edges.push_back(node);
         }
     }
-    void removeEdgeTo(const std::shared_ptr<Node>& node) {
-        if (auto iter = std::find_if(edges.begin(), edges.end(),
-                [&node](const auto& n){ return n.lock() == node; }
-            ); iter != edges.end()) {
-            edges.erase(iter);
-        }
-    }
-    void setType(const NodeType t) { type = t; }
     const NodeType getType() const { return type; }
     int getId() const { return id; }
-    void setName(const std::string& n) { name = n; }
     const std::string getName() const {
         return name.empty() ? (std::string{} + std::to_underlying(type)) : name;
     }
@@ -80,12 +65,6 @@ public:
         node->nullable = false;
         node->first.push_back(node);
         node->last.push_back(node);
-        return node;
-    }
-
-    static std::shared_ptr<Node> makeEmpty(int id = -1) {
-        auto node = std::make_shared<Node>(NodeType::Empty, id, "ε");
-        node->nullable = true;
         return node;
     }
 
@@ -187,7 +166,6 @@ public:
             right->visit(c);
         }
     }
-    friend class Parser;
 private:
     NodeType type;
     int id;
