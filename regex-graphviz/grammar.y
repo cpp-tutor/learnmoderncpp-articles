@@ -5,24 +5,17 @@
 
 %%
 
-start       : regex EOF  {
-                            nodes = Node::makeStart(std::move($1), ++nodeId);
-                            $$ = nodes;
-                        }
+start       : regex EOF  { $$ = Node::makeStart(std::move($1), ++nodeId); nodes = std::move($$); }
             ;
 
 regex       : disjunct              { $$ = std::move($1); }
             ;
 
-disjunct    : disjunct BAR concatenate  {
-                                        $$ = Node::makeDisjunct(std::move($1), std::move($3));
-                                    }
+disjunct    : disjunct BAR concatenate  { $$ = Node::makeDisjunct(std::move($1), std::move($3)); }
             | concatenate           { $$ = std::move($1); }
             ;
 
-concatenate : concatenate unary     {
-                                        $$ = Node::makeConcat(std::move($1), std::move($2));
-                                    }
+concatenate : concatenate unary     { $$ = Node::makeConcat(std::move($1), std::move($2)); }
             | unary                 { $$ = std::move($1); }
             ;
 
